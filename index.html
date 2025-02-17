@@ -10,10 +10,19 @@
             margin: 0;
             color: #0A1330; /* Dark navy text */
         }
+
         .container {
             display: flex;
             height: 100vh;
+            flex-direction: row; /* Default for larger screens */
         }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack sections vertically on smaller screens */
+            }
+        }
+
         .left-section {
             width: 50%;
             background-color: #5D0C1D; /* Deep maroon */
@@ -22,37 +31,69 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
+
+        @media (max-width: 768px) {
+            .left-section {
+                width: 100%; /* Full width on smaller screens */
+                padding: 40px 20px; /* Adjust padding for better spacing */
+            }
+        }
+
         .right-section {
             width: 50%;
             background-color: #CFB18F; /* Light tan */
-            padding: 50px;
+            padding: 20px;
+            overflow-x: auto; /* Allow horizontal scrolling for tables */
         }
+
+        @media (max-width: 768px) {
+            .right-section {
+                width: 100%; /* Full width on smaller screens */
+                padding: 20px; /* Adjust padding for better spacing */
+            }
+        }
+
         h1 {
             font-size: 2.5em;
             margin-bottom: 20px;
         }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em; /* Reduce font size for smaller screens */
+            }
+        }
+
         .plan-details {
             text-align: center;
             margin-bottom: 30px;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            font-size: 1em;
         }
+
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.9em; /* Reduce font size for better fit */
+            }
+        }
+
         th, td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
         }
+
         th {
-            background-color: #f0f0f0; 
+            background-color: #f0f0f0;
         }
-        .not-included {
-            color: #8B4513;
-            font-style: italic;
-        }
+
         .cta-button {
             display: inline-block;
             padding: 10px 20px;
@@ -62,20 +103,28 @@
             border-radius: 5px;
             margin-top: 20px;
         }
+
         .social-icons {
             margin-top: 30px;
         }
+
         .social-icons a {
             margin-right: 10px;
             font-size: 1.5em;
             color: #0A1330; /* Dark navy */
+        }
+
+        @media (max-width: 768px) {
+            .social-icons a {
+                font-size: 1.2em; /* Reduce icon size for smaller screens */
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="left-section">
-            <h1>Legal Career Services</h1> 
+            <h1>Legal Career Services</h1>
             <div class="plan-details">
                 <h2>Basic Plan</h2>
                 <p>Foundational support for your legal career journey.</p>
@@ -122,22 +171,6 @@
                     <tr>
                         <td>Essential Legal Career Resources</td>
                         <td>Access to articles and guides.</td>
-                    </tr>
-                    <tr>
-                        <td>Personalized Legal CV Review</td>
-                        <td class="not-included">Not Included</td>
-                    </tr>
-                    <tr>
-                        <td>Targeted Cover Letter Review</td>
-                        <td class="not-included">Not Included</td>
-                    </tr>
-                    <tr>
-                        <td>Networking Strategies for Legal</td>
-                        <td class="not-included">Not Included</td>
-                    </tr>
-                    <tr>
-                        <td>Access to Legal Career Webinars</td>
-                        <td class="not-included">Not Included</td>
                     </tr>
                 </tbody>
             </table>
